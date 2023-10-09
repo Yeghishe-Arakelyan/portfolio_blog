@@ -1,0 +1,259 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, minimum-scale=1"
+    />
+    <link
+      rel="shortcut icon"
+      href="{% static 'assets/images/logo.png' %}"
+      type="image/x-icon"
+    />
+    <meta name="description" content="" />
+
+    <title>Home</title>
+    <link
+      rel="stylesheet"
+      href="{% static 'assets/web/assets/mobirise-icons2/mobirise2.css' %}"
+    />
+    <link
+      rel="stylesheet"
+      href="{% static 'assets/web/assets/mobirise-icons/mobirise-icons.css' %}"
+    />
+    <link
+      rel="stylesheet"
+      href="{% static 'assets/web/assets/mobirise-icons-bold/mobirise-icons-bold.css' %}"
+    />
+    <link rel="stylesheet" href="{% static 'assets/bootstrap/css/bootstrap.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/bootstrap/css/bootstrap-grid.min.css' %}" />
+    <link
+      rel="stylesheet"
+      href="{% static 'assets/bootstrap/css/bootstrap-reboot.min.css' %}"
+    />
+    <link rel="stylesheet" href="{% static 'assets/dropdown/css/style.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/socicon/css/styles.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/theme/css/style.css' %}" />
+    <link
+      rel="preload"
+      href="https://fonts.googleapis.com/css?family=Inter+Tight:100,200,300,400,500,600,700,800,900,100i,200i,300i,400i,500i,600i,700i,800i,900i&display=swap"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript
+      ><link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Inter+Tight:100,200,300,400,500,600,700,800,900,100i,200i,300i,400i,500i,600i,700i,800i,900i&display=swap"
+    /></noscript>
+    <link
+      rel="preload"
+      as="style"
+      href="{% static 'assets/mobirise/css/mbr-additional.css' %}"
+    />
+    <link
+      rel="stylesheet"
+      href="{% static 'assets/mobirise/css/mbr-additional.css' %}"
+      type="text/css"
+    />
+  </head>
+  <body>
+    <section
+      data-bs-version="5.1"
+      class="menu menu1 cid-tRE2pA7xiZ"
+      once="menu"
+      id="menu1-4"
+    >
+      <nav class="navbar navbar-dropdown navbar-fixed-top navbar-expand-lg">
+        <div class="container-fluid">
+          <div class="navbar-brand">
+            <span class="navbar-caption-wrap"
+              ><a
+                class="navbar-caption text-black display-7"
+                href="#"
+                >PORTFOLIO</a
+              ></span
+            >
+          </div>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-bs-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarNavAltMarkup"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <div class="hamburger">
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul
+              class="navbar-nav nav-dropdown nav-right"
+              data-app-modern-menu="true"
+            >
+              <li class="nav-item">
+                <a
+                  class="nav-link link text-black display-4"
+                  href="{% url 'blog:blog_home_page' %}"
+                  >Home</a
+                >
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link link text-black display-4"
+                  href="{% url 'blog:post_list' %}"
+                  >Posts</a
+                >
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link link text-black display-4"
+                  href="{% url 'projects:home_page' %}"
+                  >Projects</a
+                >
+              </li>
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link link text-black dropdown-toggle display-4"
+                  
+                  data-toggle="dropdown-submenu"
+                  data-bs-toggle="dropdown"
+                  data-bs-auto-close="outside"
+                  aria-expanded="false"
+                  >Profile</a
+                >
+                {% if request.user.is_authenticated %}
+                <div class="dropdown-menu" aria-labelledby="dropdown-948">
+                  <a
+                    class="text-black dropdown-item display-4"
+                    href="{% url 'accounts:edit_profile' %}"
+                    >Edit Profile</a
+                  ><a
+                    class="text-black dropdown-item display-4"
+                    href="{% url 'accounts:user_logout' %}"
+                    >Sign out</a
+                  >
+                </div>
+              </li>
+            </ul>
+			{% else %}
+			<div class="dropdown-menu" aria-labelledby="dropdown-948">
+				<a
+				  class="text-black dropdown-item display-4"
+				  href="{% url 'accounts:user_login' %}"
+				  >Login</a
+				><a
+				  class="text-black dropdown-item display-4"
+				  href="{% url 'accounts:user_register' %}"
+				  >Sign-up</a
+				>
+			  </div>
+			  {% endif %}
+			</ul>
+            <div class="icons-menu">
+              <a
+                class="iconfont-wrapper"
+                href="https://www.linkedin.com/in/yeghishe-arakelyan-a92947284"
+                target="_blank"
+              >
+                <span class="p-2 mbr-iconfont socicon-linkedin socicon"></span>
+              </a>
+              <a
+                class="iconfont-wrapper"
+                href="https://github.com/Yeghishe-Arakelyan"
+                target="_blank"
+              >
+                <span
+                  class="p-2 mbr-iconfont mobi-mbri-github mobi-mbri"
+                ></span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </section>
+
+  <body>
+
+    <section data-bs-version="5.1" class="features7 cid-tRUW8huHJ1" id="features7-i">
+      <!-- Content for Section 1 -->
+      <div class="container">
+        <div class="card-wrapper">
+          <div class="row align-items-center">
+            <div class="col-12 col-lg-6">
+              <div class="image-wrapper">
+                <img src="{{ post.image.url }}" alt="Mobirise Website Builder" />
+              </div>
+            </div>
+            <div class="col-12 col-lg">
+              <div class="text-box">
+                <h5 class="mbr-title mbr-fonts-style display-2">
+                  <strong>{{ post.title }}</strong><strong><br /></strong>
+                </h5>
+                <p class="mbr-text mbr-fonts-style display-7">{{ post.context }}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section data-bs-version="5.1" class="features21 cid-tRUWMUqvVX" id="features21-j">
+      <!-- Content for Section 2 -->
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-md-12 col-lg-9">
+            <div class="card-wrapper mb-4">
+              <div class="card-box align-left">
+                <h4 class="card-title mbr-fonts-style mb-4 display-2">
+                  <strong>{{ post.name }}</strong>
+                </h4>
+                <p class="mbr-text mbr-fonts-style mb-4 display-7 " style="white-space: pre-line;">{{ post.content }}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="container mt-4 mb-4">
+      <h3>Related posts:</h3>
+      <hr>
+      <div class="row">
+        {% for p in related_posts %}
+          <!-- Don't show the current post on this page -->
+          {% if p != post %}
+            <div class="col-md-4 mb-4">
+              <div class="card" style="width: 100%;">
+                <img style="object-fit: cover;" class="card-img-top" src="{{ p.image.url }}" alt="{{ p.title }}" />
+                <div class="card-body">
+                  <h5 class="card-title">{{ p.title }}</h5>
+                  <a href="{{ p.get_absolute_url }}" class="btn btn-primary display-4">Read more</a>
+                </div>
+              </div>
+            </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+    <script src="{% static 'assets/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'assets/smoothscroll/smooth-scroll.js' %}"></script>
+    <script src="{% static 'assets/ytplayer/index.js' %}"></script>
+    <script src="{% static 'assets/dropdown/js/navbar-dropdown.js' %}"></script>
+    <script src="{% static 'assets/embla/embla.min.js' %}"></script>
+    <script src="{% static 'assets/embla/script.js' %}"></script>
+    <script src="{% static 'assets/sociallikes/social-likes.js' %}"></script>
+    <script src="{% static 'assets/theme/js/script.js' %}"></script>
+  </body>
+
+</html>
+
